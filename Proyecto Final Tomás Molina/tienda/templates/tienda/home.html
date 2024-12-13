@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Mi Tienda{% endblock %}
+
+{% block content %}
+    <!-- Banner de bienvenida -->
+    <div class="banner">
+        <h1> CS2 Skins.Shop </h1>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="intro">
+            <h2>¡Bienvenido a la mejor tienda de skins para CS2!</h2>
+            <p>Aquí puedes encontrar un montón de skins disponibles. ¡Todo lo que necesitas está a un clic de distancia!</p>
+            <!-- Modificado para redirigir a skins -->
+            <a href="{% url 'skins' %}" class="btn">Explorar productos</a>
+        </div>
+    </main>
+{% endblock %}
+

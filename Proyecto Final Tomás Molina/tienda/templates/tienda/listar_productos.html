@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Productos disponibles</h1>
+    <ul>
+        {% for producto in productos %}
+        <li>
+            <h2>{{ producto.nombre }}</h2>
+            <p>{{ producto.descripcion|truncatewords:20 }}</p> <!-- Muestra solo las primeras 20 palabras de la descripción -->
+            <p>Precio: ${{ producto.precio }}</p>
+            <p>Stock: {{ producto.stock }}</p>
+            <a href="{% url 'detalle_producto' producto_id=producto.id %}">Leer más</a> <!-- Enlace para ver detalles -->
+        </li>
+        {% empty %}
+            <p>No hay productos disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+

@@ -1,0 +1,8 @@
+{% extends 'tienda/base.html' %}
+
+{% block content %}
+    <h1>{{ skin.nombre }}</h1>
+    <p>{{ skin.descripcion }}</p>
+    <img src="{{ skin.imagen.url }}" alt="{{ skin.nombre }}" width="400">
+    <p>Precio: ${{ skin.precio }}</p>
+{% endblock %}

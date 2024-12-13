@@ -1,0 +1,22 @@
+{% extends 'tienda/base.html' %}
+
+{% block content %}
+    <h1>Skins</h1>
+    <div class="skin-cards">
+        {% for skin in skins %}
+            <div class="card">
+                <img src="{{ skin.imagen.url }}" alt="{{ skin.nombre }}" class="card-img">
+                <div class="card-body">
+                    <h3>{{ skin.nombre }}</h3>
+                    <p>{{ skin.descripcion }}</p>
+                    <p class="price">Precio: ${{ skin.precio }}</p>
+                    <a href="{% url 'detalle_skin' skin.id %}" class="btn">Leer más</a>
+                    <a href="{% url 'comprar_skin' skin.id %}" class="btn">Comprar</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay skins disponibles.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
